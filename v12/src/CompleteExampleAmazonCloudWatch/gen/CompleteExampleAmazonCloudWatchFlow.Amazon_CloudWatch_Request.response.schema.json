@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "items": {
+    "type": "object",
+    "properties": {
+      "AlarmName": {
+        "displayOrder": 1,
+        "title": "Alarm name",
+        "description": "The name of the composite alarm, which must be unique within the region",
+        "display": {
+          "nameProperty": true
+        },
+        "type": "string"
+      },
+      "AlarmDescription": {
+        "displayOrder": 2,
+        "title": "Alarm description",
+        "description": "The description for the composite alarm",
+        "type": "string"
+      },
+      "AlarmRule": {
+        "displayOrder": 3,
+        "title": "Alarm rule",
+        "description": "An expression that specifies which alarms are to be evaluated to determine the composite alarm's state. The valid values are ALARM, OK, or INSUFFICIENT_DATA. For more information, see https://ibm.biz/BdPPbN.",
+        "type": "string"
+      },
+      "ActionsEnabled": {
+        "displayOrder": 4,
+        "title": "Actions enabled",
+        "description": "Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. By default, the value is set to true.",
+        "type": "boolean"
+      },
+      "ActionsSuppressor": {
+        "displayOrder": 5,
+        "title": "Actions suppressor",
+        "description": "The actions are suppressed if the suppressor alarm is in the alarm state. The values can be actions suppressor name, alarm name or Amazon Resource Name (ARN) from an existing alarm.",
+        "type": "string"
+      },
+      "ActionsSuppressorExtensionPeriod": {
+        "displayOrder": 6,
+        "title": "Actions suppressor extension period",
+        "description": "The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the alarm state. The extension period is required only when actions suppressor is specified.",
+        "type": "number"
+      },
+      "ActionsSuppressorWaitPeriod": {
+        "displayOrder": 7,
+        "title": "Actions suppressor wait period",
+        "description": "The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the alarm state. The wait period is required only when actions suppressor is specified.",
+        "type": "number"
+      },
+      "AlarmActions": {
+        "displayOrder": 8,
+        "title": "Alarm actions",
+        "description": "The actions to execute when the alarm transitions to the alarm state from any other state. Each action is specified as an Amazon Resource Name (ARN).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "InsufficientDataActions": {
+        "displayOrder": 9,
+        "title": "Insufficient data actions",
+        "description": "The actions to execute when the alarm transitions to the insufficient data state from any other state. Each action is specified as an Amazon Resource Name (ARN).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "OKActions": {
+        "displayOrder": 10,
+        "title": "OK actions",
+        "description": "The actions to execute when this alarm transitions to an OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "StateValue": {
+        "displayOrder": 18,
+        "title": "Alarm state",
+        "description": "The alarm state for the alarm. The valid values are OK, ALARM or INSUFFICIENT_DATA.",
+        "enum": [
+          "OK",
+          "ALARM",
+          "INSUFFICIENT_DATA"
+        ],
+        "type": "string"
+      },
+      "ActionsSuppressedBy": {
+        "displayOrder": 19,
+        "title": "Actions suppressed by",
+        "description": "The actions suppressed by, for example, alarm. The actions are suppressed because the suppressor alarm is set to ALARM or WaitPeriod.",
+        "type": "string"
+      },
+      "ActionsSuppressedReason": {
+        "displayOrder": 20,
+        "title": "Actions suppressed reason",
+        "description": "The reason for action suppression",
+        "type": "string"
+      },
+      "AlarmArn": {
+        "displayOrder": 21,
+        "title": "Alarm ARN",
+        "description": "The Amazon Resource Name (ARN) of the alarm",
+        "type": "string"
+      },
+      "AlarmConfigurationUpdatedTimestamp": {
+        "displayOrder": 22,
+        "title": "Alarm configuration updated timestamp",
+        "description": "The date the alarm configuration was last updated",
+        "type": "string",
+        "format": "date-time"
+      },
+      "StateReason": {
+        "displayOrder": 23,
+        "title": "State reason",
+        "description": "The explanation for the alarm state in text format",
+        "type": "string"
+      },
+      "StateReasonData": {
+        "displayOrder": 24,
+        "title": "State reason data",
+        "description": "The explanation for the alarm state in JSON format",
+        "type": "string"
+      },
+      "StateTransitionedTimestamp": {
+        "displayOrder": 25,
+        "title": "State transitioned timestamp",
+        "description": "The date the alarm's state value was last updated",
+        "type": "string",
+        "format": "date-time"
+      },
+      "StateUpdatedTimestamp": {
+        "displayOrder": 26,
+        "title": "State updated timestamp",
+        "description": "The date the state was last updated ",
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "title": "compositealarms",
+    "additionalProperties": false
+  },
+  "type": "array",
+  "title": "compositealarms"
+}

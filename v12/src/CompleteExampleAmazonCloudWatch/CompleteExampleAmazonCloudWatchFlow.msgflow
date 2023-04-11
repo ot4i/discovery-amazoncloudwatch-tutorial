@@ -25,7 +25,10 @@
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="432,27">
         <translation xmi:type="utility:ConstantString" string="HTTP Reply"/>
       </nodes>
-      <nodes xmi:type="ComIbmApplicationConnectorRequest_amazoncloudwatch.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="438,91" applicationConnectorType="amazoncloudwatch">
+      <nodes xmi:type="ComIbmApplicationConnectorRequest_amazoncloudwatch.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="438,91" applicationConnectorType="amazoncloudwatch" action="RETRIEVEALL" businessObject="compositealarms" displayName="Retrieve composite alarms" schemaPrefix="gen/CompleteExampleAmazonCloudWatchFlow.Amazon_CloudWatch_Request" policyUrl="{CompletePolicyProjectAmazonCloudWatch}:AmazonCloudWatch1" messageSetProperty="gen/CompleteExampleAmazonCloudWatchFlow.Amazon_CloudWatch_Request.response.schema.json">
+        <filter>
+          <queryProperties limit="1" allowTruncation="true" paginationType="TOKEN"/>
+        </filter>
         <translation xmi:type="utility:ConstantString" string="Amazon CloudWatch Request"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
